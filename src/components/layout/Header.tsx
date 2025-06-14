@@ -129,14 +129,6 @@ const Header = () => {
 
               <div className="space-y-3 pt-4 border-charcoal border-t">
                 <Button
-                  variant="secondary"
-                  size="sm"
-                  className="w-full"
-                  onClick={() => handleNavClick("#demo")}
-                >
-                  View Demo
-                </Button>
-                <Button
                   variant="primary"
                   size="sm"
                   className="w-full"

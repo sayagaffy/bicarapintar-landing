@@ -10,8 +10,8 @@ import {
   Clock,
   CheckCircle,
   ArrowRight,
-  Download,
-  Play,
+  // Download,
+  // Play,
 } from "lucide-react";
 import { validateEmail } from "@/lib/utils";
 
@@ -68,9 +68,9 @@ const ContactSection = () => {
       phone: "(+62) 8119409188",
     },
     {
-      name: "Dimmy Harfahmy",
-      email: "dimmy@bicarapintar.ai",
-      phone: "(+62) 81218887742",
+      name: "Gaffy Budiman",
+      email: "gaffy@bicarapintar.ai",
+      phone: "(+62) 8112257586",
     },
   ];
 
@@ -338,14 +338,6 @@ const ContactSection = () => {
                     >
                       Schedule Consultation
                     </Button>
-                    <Button
-                      type="button"
-                      variant="secondary"
-                      size="lg"
-                      leftIcon={<Download className="w-5 h-5" />}
-                    >
-                      Download Guide
-                    </Button>
                   </div>
 
                   <div className="pt-4 border-charcoal border-t text-center">
@@ -375,7 +367,7 @@ const ContactSection = () => {
           >
             <div className="space-y-8">
               {/* Alternative CTAs */}
-              <div className="space-y-4">
+              {/* <div className="space-y-4">
                 <h4 className="font-goli font-semibold text-arctic-white text-xl">
                   Other Ways to Connect
                 </h4>
@@ -386,7 +378,7 @@ const ContactSection = () => {
                   leftIcon={<Play className="w-5 h-5" />}
                   className="justify-center w-full"
                 >
-                  View Live Demo
+                  Explore Our Solution
                 </Button>
 
                 <Button
@@ -397,7 +389,7 @@ const ContactSection = () => {
                 >
                   Implementation Guide
                 </Button>
-              </div>
+              </div> */}
 
               {/* Office Locations */}
               <div>

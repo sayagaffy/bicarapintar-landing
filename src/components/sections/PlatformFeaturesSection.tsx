@@ -1,8 +1,10 @@
 "use client";
 
 import React from "react";
+import Link from "next/link"; // Import Link
 import { motion } from "framer-motion";
 import { MessageSquare, Phone, CheckCircle, Zap } from "lucide-react";
+import { scrollToElement } from "@/lib/utils";
 
 const PlatformFeaturesSection = () => {
   const features = {
@@ -209,10 +211,22 @@ const PlatformFeaturesSection = () => {
               experience with proven enterprise-grade solutions.
             </p>
             <div className="flex sm:flex-row flex-col justify-center gap-4">
-              <button className="btn-primary">Schedule Free Demo</button>
-              <button className="btn-secondary">
-                Download Technical Specs
+              <button
+                className="btn-primary"
+                size="lg"
+                variant="primary"
+                onClick={() => scrollToElement("contact")}
+              >
+                Schedule Free Demo
               </button>
+              <Link
+                href="https://shorturl.at/P4IIs"
+                passHref
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="btn-secondary">Explore Our Solution</button>
+              </Link>
             </div>
           </div>
         </motion.div>

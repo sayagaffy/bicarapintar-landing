@@ -46,21 +46,12 @@ const Header = () => {
           <div className="flex items-center">
             <div className="flex items-center space-x-3">
               {/* BicaraPintar Logo Mark */}
-              <div className="flex justify-center items-center w-8 h-8">
-                <svg
-                  viewBox="0 0 100 100"
-                  className="w-full h-full text-arctic-white"
-                  fill="currentColor"
-                >
-                  {/* Simplified infinity symbol with B integration */}
-                  <path
-                    d="M25,50 C25,35 35,25 50,25 C65,25 75,35 75,50 C75,65 65,75 50,75 C35,75 25,65 25,50 Z M75,50 C75,35 85,25 100,25 C85,25 75,35 75,50 C75,65 85,75 100,75 C85,75 75,65 75,50 Z"
-                    opacity="0.9"
-                  />
-                </svg>
-              </div>
-              <div className="font-goli font-semibold text-arctic-white text-xl">
-                bicarapintar
+              <div className="flex justify-center items-center h-6">
+                <img
+                  src="/images/LF-white.svg"
+                  alt="BicaraPintar Logo"
+                  className="w-full h-full"
+                />
               </div>
             </div>
           </div>
@@ -95,13 +86,6 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button
-              variant="secondary"
-              size="sm"
-              onClick={() => handleNavClick("#demo")}
-            >
-              View Demo
-            </Button>
             <Button
               variant="primary"
               size="sm"

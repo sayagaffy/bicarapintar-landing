@@ -23,7 +23,7 @@ const Footer = () => {
   const resources = [
     { name: "Case Studies", href: "#solutions" },
     { name: "Technical Documentation", href: "#docs" },
-    { name: "Implementation Guide", href: "#guide" },
+    { name: "See Details in Action", href: "https://shorturl.at/P4IIs" },
     { name: "API Reference", href: "#api" },
   ];
 
@@ -51,21 +51,13 @@ const Footer = () => {
                 transition={{ duration: 0.6 }}
               >
                 {/* Logo */}
-                <div className="flex items-center space-x-3 mb-6">
-                  <div className="flex justify-center items-center w-8 h-8">
-                    <svg
-                      viewBox="0 0 100 100"
-                      className="w-full h-full text-arctic-white"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M25,50 C25,35 35,25 50,25 C65,25 75,35 75,50 C75,65 65,75 50,75 C35,75 25,65 25,50 Z M75,50 C75,35 85,25 100,25 C85,25 75,35 75,50 C75,65 85,75 100,75 C85,75 75,65 75,50 Z"
-                        opacity="0.9"
-                      />
-                    </svg>
-                  </div>
-                  <div className="font-goli font-semibold text-arctic-white text-xl">
-                    bicarapintar
+                <div className="flex items-center mb-6">
+                  <div className="flex justify-center items-center w-32 h-8">
+                    <img
+                      src="/images/LS-white.svg"
+                      alt="BicaraPintar Logo"
+                      className="w-full h-full"
+                    />
                   </div>
                 </div>
 
@@ -234,7 +226,7 @@ const Footer = () => {
                     <div className="flex items-center space-x-3">
                       <Phone className="w-4 h-4 text-quantum-teal" />
                       <a
-                        href="tel:+6281194091888"
+                        href="tel:6281194091888"
                         className="text-light-gray hover:text-arctic-white text-sm transition-colors"
                       >
                         (+62) 8119409188

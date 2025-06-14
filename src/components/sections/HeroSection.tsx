@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link"; // Import Link
 import { Button } from "@/components/ui/Button";
 import { CheckCircle, Play, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
@@ -116,14 +117,20 @@ const HeroSection = () => {
               >
                 Schedule Free Consultation
               </Button>
-              <Button
-                size="lg"
-                variant="secondary"
-                onClick={() => scrollToElement("demo")}
-                leftIcon={<Play className="w-5 h-5" />}
+              <Link
+                href="https://shorturl.at/P4IIs"
+                passHref
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                View Live Demo
-              </Button>
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  leftIcon={<Play className="w-5 h-5" />}
+                >
+                  Product Overview
+                </Button>
+              </Link>
             </motion.div>
 
             {/* Trust Indicators */}

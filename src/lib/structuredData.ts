@@ -48,9 +48,9 @@ export const organizationSchema = {
     },
     {
       "@type": "ContactPoint",
-      telephone: "+62-81218887742",
+      telephone: "+62-8112257586",
       contactType: "technical support",
-      email: "dimmy@bicarapintar.ai",
+      email: "gaffy@bicarapintar.ai",
       availableLanguage: ["English", "Indonesian"],
       areaServed: "ID",
     },

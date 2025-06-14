@@ -122,7 +122,7 @@ export const storage = {
 // Utility function for analytics tracking
 export function trackEvent(
   eventName: string,
-  properties?: Record<string, any>
+  properties?: Record<string, string | number | boolean | object>
 ) {
   if (typeof window === "undefined") return;
 

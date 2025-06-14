@@ -194,8 +194,8 @@ const ContactSection = () => {
                     Thank You!
                   </h4>
                   <p className="mb-6 text-light-gray">
-                    We've received your request and will contact you within 24
-                    hours.
+                    We&apos;ve received your request and will contact you within
+                    24 hours.
                   </p>
                   <Button
                     variant="secondary"

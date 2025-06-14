@@ -2,26 +2,169 @@
 @tailwind components;
 @tailwind utilities;
 
+/* CSS Variables for BicaraPintar Brand */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-royal-purple: #6A2FF7;
+  --color-quantum-teal: #33F2CD;
+  --color-magma: #F43151;
+  --color-arctic-white: #FCFCFC;
+  --color-void-black: #0A0A0A;
+  --color-droplet: #1E1E1E;
+  --color-charcoal: #2A2A2A;
+  --color-light-gray: #B0B0B0;
+  --color-muted-gray: #666666;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--color-void-black);
+  color: var(--color-arctic-white);
+  font-family: 'Open Sans', system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-droplet);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-royal-purple);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-quantum-teal);
+}
+
+/* Selection Styles */
+::selection {
+  background: var(--color-royal-purple);
+  color: var(--color-arctic-white);
+}
+
+/* Focus Styles for Accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-quantum-teal);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Custom Utility Classes */
+@layer components {
+  .btn-primary {
+    @apply bg-royal-purple hover:bg-royal-purple-hover hover:shadow-lg px-8 py-4 rounded-lg font-semibold text-arctic-white hover:scale-105 transition-all duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent hover:bg-droplet px-8 py-4 border border-charcoal hover:border-royal-purple rounded-lg font-semibold text-arctic-white transition-all duration-200;
+  }
+  
+  .btn-tertiary {
+    @apply bg-transparent hover:bg-royal-purple px-8 py-4 border border-arctic-white hover:border-royal-purple rounded-lg font-semibold text-arctic-white transition-all duration-200;
+  }
+  
+  .card-hover {
+    @apply hover:border-royal-purple/30 hover:transform hover:scale-[1.02] hover:shadow-xl transition-all duration-200;
+  }
+  
+  .section-container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .section-spacing {
+    @apply py-section-mobile lg:py-section;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text bg-gradient-to-r from-royal-purple to-quantum-teal text-transparent;
+  }
+  
+  .glow-purple {
+    box-shadow: 0 0 20px rgba(106, 47, 247, 0.3);
+  }
+  
+  .glow-teal {
+    box-shadow: 0 0 20px rgba(51, 242, 205, 0.3);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Animation Classes */
+.animate-fade-up {
+  animation: fadeUp 0.6s ease-out forwards;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Stagger Animation for Lists */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+
+/* Gradient Backgrounds */
+.bg-hero-gradient {
+  background: radial-gradient(circle at 25% 25%, rgba(106, 47, 247, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 75% 75%, rgba(51, 242, 205, 0.03) 0%, transparent 50%),
+              var(--color-void-black);
+}
+
+.bg-card-gradient {
+  background: linear-gradient(135deg, 
+    rgba(106, 47, 247, 0.1) 0%, 
+    rgba(51, 242, 205, 0.05) 100%
+  );
+}
+
+/* Loading States */
+.loading-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.04),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Print Styles */
+@media print {
+  * {
+    background: white !important;
+    color: black !important;
   }
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn, scrollToElement } from "@/lib/utils";
@@ -47,10 +48,13 @@ const Header = () => {
             <div className="flex items-center space-x-3">
               {/* BicaraPintar Logo Mark */}
               <div className="flex justify-center items-center h-6">
-                <img
+                <Image
                   src="/images/LF-white.svg"
                   alt="BicaraPintar Logo"
+                  width={100}
+                  height={24}
                   className="w-full h-full"
+                  priority
                 />
               </div>
             </div>

@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link"; // Import Link
 import { motion } from "framer-motion";
 import { MessageSquare, Phone, CheckCircle, Zap } from "lucide-react";
+import { Button } from "@/components/ui/Button";
 import { scrollToElement } from "@/lib/utils";
 
 const PlatformFeaturesSection = () => {
@@ -211,14 +212,13 @@ const PlatformFeaturesSection = () => {
               experience with proven enterprise-grade solutions.
             </p>
             <div className="flex sm:flex-row flex-col justify-center gap-4">
-              <button
-                className="btn-primary"
-                size="lg"
+              <Button
                 variant="primary"
+                size="lg"
                 onClick={() => scrollToElement("contact")}
               >
                 Schedule Free Demo
-              </button>
+              </Button>
               <Link
                 href="https://shorturl.at/P4IIs"
                 passHref

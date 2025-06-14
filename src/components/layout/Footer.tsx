@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Linkedin, Twitter, ArrowUp } from "lucide-react";
 import { scrollToElement } from "@/lib/utils";
@@ -53,10 +54,13 @@ const Footer = () => {
                 {/* Logo */}
                 <div className="flex items-center mb-6">
                   <div className="flex justify-center items-center w-32 h-8">
-                    <img
+                    <Image
                       src="/images/LS-white.svg"
                       alt="BicaraPintar Logo"
+                      width={128}
+                      height={32}
                       className="w-full h-full"
+                      priority
                     />
                   </div>
                 </div>

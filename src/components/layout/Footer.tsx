@@ -77,7 +77,7 @@ const Footer = () => {
                     PT Bicara Pintar Indonesia
                   </h4>
                   <p className="text-muted-gray text-sm">
-                    Established 2023 • Enterprise AI Solutions
+                    Established 2025 • Enterprise AI Solutions
                   </p>
                 </div>
 

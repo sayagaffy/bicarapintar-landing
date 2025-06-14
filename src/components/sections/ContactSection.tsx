@@ -125,23 +125,42 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-
-      // Here you would normally send to your backend
-      console.log("Form submitted:", formData);
-
-      setIsSubmitted(true);
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        industry: "",
-        message: "",
-        timeline: "",
+      const response = await fetch("https://formspree.io/f/xpwrrqzn", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          industry: formData.industry,
+          message: formData.message,
+          timeline: formData.timeline,
+          _replyto: "noreply@bicarapintar.ai",
+          _subject: "New Lead from BicaraPintar Website",
+          _language: "id",
+        }),
       });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          industry: "",
+          message: "",
+          timeline: "",
+        });
+      } else {
+        throw new Error("Failed to submit form");
+      }
     } catch (error) {
       console.error("Submission error:", error);
+      alert(
+        "Terjadi kesalahan saat mengirim pesan. Silakan coba lagi atau hubungi kami langsung."
+      );
     } finally {
       setIsSubmitting(false);
     }

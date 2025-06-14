@@ -6,8 +6,11 @@ const nextConfig = {
   compress: true,
 
   // For static export (if using static hosting)
-  // output: 'export',
-  // trailingSlash: true,
+  output: "export",
+  trailingSlash: true,
+
+  // Ensure correct asset paths for static export
+  assetPrefix: "/",
 
   // Image optimization
   images: {
@@ -15,70 +18,16 @@ const nextConfig = {
     minimumCacheTTL: 60,
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    // For static export, uncomment:
-    // unoptimized: true
+    // For static export
+    unoptimized: true,
   },
 
-  // Headers for SEO and performance
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: [
-          {
-            key: "X-Content-Type-Options",
-            value: "nosniff",
-          },
-          {
-            key: "X-Frame-Options",
-            value: "DENY",
-          },
-          {
-            key: "X-XSS-Protection",
-            value: "1; mode=block",
-          },
-          {
-            key: "Referrer-Policy",
-            value: "origin-when-cross-origin",
-          },
-        ],
-      },
-      {
-        source: "/sitemap.xml",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=86400, stale-while-revalidate=43200",
-          },
-        ],
-      },
-      {
-        source: "/robots.txt",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=86400",
-          },
-        ],
-      },
-    ];
-  },
+  // Static routing is now handled via generateStaticParams() in page components
 
-  // Redirects for SEO
-  async redirects() {
-    return [
-      {
-        source: "/home",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/index",
-        destination: "/",
-        permanent: true,
-      },
-    ];
-  },
+  // Note: Headers and redirects are not supported in static export
+  // SEO will be handled via static files and sitemap
+  headers: undefined,
+  redirects: undefined,
 
   // Experimental features for better SEO
   experimental: {

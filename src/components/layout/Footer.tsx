@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Linkedin, Twitter, ArrowUp } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Twitter, ArrowUp } from "lucide-react";
 import { scrollToElement } from "@/lib/utils";
 
 const Footer = () => {
@@ -84,15 +84,15 @@ const Footer = () => {
                 {/* Social Links */}
                 <div className="flex items-center space-x-4">
                   <a
-                    href="https://linkedin.com/company/bicarapintar"
+                    href="https://Facebook.com/company/bicarapintar"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex justify-center items-center bg-droplet hover:bg-royal-purple/10 border border-charcoal hover:border-royal-purple rounded-lg w-10 h-10 transition-all duration-200"
                   >
-                    <Linkedin className="w-5 h-5 text-light-gray" />
+                    <Facebook className="w-5 h-5 text-light-gray" />
                   </a>
                   <a
-                    href="https://twitter.com/bicarapintar"
+                    href="https://facebook.com/bicarapintar"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex justify-center items-center bg-droplet hover:bg-royal-purple/10 border border-charcoal hover:border-royal-purple rounded-lg w-10 h-10 transition-all duration-200"
